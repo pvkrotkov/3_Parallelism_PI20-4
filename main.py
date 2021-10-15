@@ -1,4 +1,5 @@
 import multiprocessing as mp
+#библиотека PyYAML
 import yaml
 import random
 from typing import List
