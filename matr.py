@@ -97,10 +97,10 @@ if __name__ == '__main__':
 
     print("остановить: приостановить генерацию файлов\выйти: завершить выполнение программы")
     while True:
-        cmd = input()
-        if cmd == "остановить":
+        command = input()
+        if command == "остановить":
             run.value = not run.value
-        elif cmd == "выйти":
+        elif command == "выйти":
             for proc in proc_list:
                 proc.terminate()
             break
