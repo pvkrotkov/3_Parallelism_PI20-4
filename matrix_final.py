@@ -37,21 +37,3 @@ def write_result_to_file(matrix, filename):
     file.close()
 
 
-if __name__ == "__main__":
-    with open('matrix1.json','r') as f:
-        matrix1 = np.matrix(load(f))
-
-    with open('matrix2.json','r') as f:
-        matrix2 = np.matrix(load(f))
-
-    p = Pool(matrix1.shape[0] * matrix2.shape[1])
-
-    if check_matrix(matrix1, matrix2):
-        args = generate_map(matrix1, matrix2)
-        result = np.array(p.map(element, args))
-        matrix = result.reshape(matrix1.shape[0], matrix2.shape[1])
-        print(matrix)
-        write_result_to_file(matrix, 'result.txt')
-    else:
-        file = open('result.txt', 'w')
-        file.close()
